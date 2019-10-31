@@ -12,6 +12,7 @@ function fetchData() {
             var result = data.drinks[0] //gets 1st result
             console.log(result); //logs as object
             
+            //TODO handlebars
             document.querySelector('#target').innerHTML =  '<p>' + result.strDrink + ' is  '+result.strAlcoholic+'</p>'
             document.querySelector('#targetImg').innerHTML = '<img src='+ result.strDrinkThumb +' alt="placeholder">'
         })
