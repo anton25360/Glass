@@ -26,18 +26,22 @@
 
     <div class="searchBox">
         <input type="text" id="textInput" placeholder="mojito">
-        <button id="searchBtn" onclick="fetchData()">Search</button>
+        <button class="btn" id="searchBtn">Search</button><br>
+        <button class="btn" id="searchBtnNew">New Search</button>
     </div>
 
-    <div id="line"></div>
+    <!-- <div id="line"></div> -->
 
-    <div class="output">
+    <div id="output">
 
+        <div id="line"></div>
         <div id="drinkName"></div> <!-- mojito -->
-        <div id="drinkInfo"></div> <!-- mojito -->
-        <div id="drinkType"></div> <!-- alcoholic -->
-        <div id="drinkCategory"></div> <!-- ordinary drink -->
+        <div id="drinkInfo"></div> <!-- alcoholic, ordinary drink -->
+        <div id="line"></div>
+        <div id="drinkIngredients"></div> <!-- ingredients -->
+        <div id="line"></div>
         <div id="drinkInstructions"></div> <!-- instructions -->
+        <div id="line"></div>
         <div id="drinkImg"></div> <!-- img -->
     </div>
 

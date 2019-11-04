@@ -59,7 +59,7 @@ body{
         border-radius: 4px;
     }
 
-    #searchBtn {
+    .btn{
         background-color: black;
         color: white;
         border: 1px solid black;
@@ -75,7 +75,7 @@ body{
     margin: 30px auto;
 }
 
-.output{
+#output{
     // border: 5px solid red;
     text-align: center;
 
