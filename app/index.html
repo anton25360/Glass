@@ -22,16 +22,19 @@
         </div>
     </header>
 
-    <div class="text">Enter a cocktail name below, and press Search.<br>If it exists; the name, ingredients and instuctions will be displayed!</div>
+    <div class="text">To get started, enter a cocktail name below and press Search.</div>
 
     <div class="searchBox">
         <input type="text" id="textInput" placeholder="mojito">
         <button id="searchBtn" onclick="fetchData()">Search</button>
     </div>
 
+    <div id="line"></div>
+
     <div class="output">
 
         <div id="drinkName"></div> <!-- mojito -->
+        <div id="drinkInfo"></div> <!-- mojito -->
         <div id="drinkType"></div> <!-- alcoholic -->
         <div id="drinkCategory"></div> <!-- ordinary drink -->
         <div id="drinkInstructions"></div> <!-- instructions -->

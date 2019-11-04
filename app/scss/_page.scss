@@ -40,7 +40,7 @@ body{
 
 .text{
     // border: 2px solid red;
-    margin: 50px 0px;
+    margin: 30px 0px;
     text-align: center;
     font-size: 20px;
 }
@@ -50,6 +50,7 @@ body{
     text-align: center;
     display: inline-block;
     width: 100%;
+    // margin-bottom: 20px;
 
     #textInput{
         border: 1.5px solid black;
@@ -65,17 +66,26 @@ body{
         border-radius: 3px;
         padding: 5px 20px;
     }
- 
+}
 
-
+#line{
+    height: 4px;
+    width: 80px;
+    background: linear-gradient(to right,#FC466B,#3F5EFB);
+    margin: 30px auto;
 }
 
 .output{
     // border: 5px solid red;
     text-align: center;
 
+    #drinkName{
+        font-size: 30px;
+        text-align: center;
+    }
+
     #drinkInstructions{
-        margin: 0 20%;
+        margin: 10px 35%;
     }
 
     #drinkImg #image{
