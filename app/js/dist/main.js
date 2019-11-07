@@ -62,8 +62,7 @@ function newSearchVisibility(value) {
         document.getElementById('textInput').style.visibility = 'hidden';
         document.getElementById('searchBtn').style.visibility = 'hidden';
         document.getElementById('searchBtnNew').style.visibility = 'visible';
-        // document.getElementById('searchBtnNew').style.marginTop = '-10px'
-        document.getElementById('box').style.height = '0';
+        document.getElementById('searchBtnNew').style.marginTop = '20px';
     }
     else {
         document.getElementById('textInput').style.visibility = 'visible';
