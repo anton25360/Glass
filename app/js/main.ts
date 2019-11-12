@@ -1,10 +1,11 @@
-setOutputVisibility(false)
-newSearchVisibility(false)
+showOutput(false)
+showNewSearchBtn(false)
+showErrorMsg(false)
 
 document.getElementById('searchBtn').addEventListener('click', function fetchData() {
 
-    setOutputVisibility(true)
-    newSearchVisibility(true)
+    showOutput(true)
+    showNewSearchBtn(true)
     var input = (<HTMLInputElement>document.getElementById('textInput')).value;
 
     fetch('https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + input)
@@ -12,14 +13,24 @@ document.getElementById('searchBtn').addEventListener('click', function fetchDat
             return data.json()
         })
         .then(function (data) {
-            var result = data.drinks[0] //gets 1st result
+            
+            if (data.drinks == null) {
+                console.log('query is null - ERROR');
+                showOutput(false)
+                showNewSearchBtn(true)
+                showErrorMsg(true)
+            } else {
 
+            
+
+            var result = data.drinks[0] //gets 1st result
+            
+            
             document.querySelector('#drinkName').innerHTML = '<p>' + result.strDrink + '</p>'
             document.querySelector('#drinkInfo').innerHTML = '<p>' + result.strAlcoholic + ', ' + result.strCategory + '</p>'
             document.querySelector('#drinkIngredients').innerHTML += '<p> Ingredients:<br></p>'
             document.querySelector('#drinkInstructions').innerHTML = '<p>Instructions:<br><br>' + result.strInstructions + '</p>'
             document.querySelector('#drinkImg').innerHTML = '<img id="image" src=' + result.strDrinkThumb + ' alt="placeholder">'
-
 
             var ingredients: string[] = []
             var measurements: string[] = []
@@ -57,10 +68,16 @@ document.getElementById('searchBtn').addEventListener('click', function fetchDat
                 document.querySelector('#drinkIngredients').innerHTML += '<p>' + ingredients[index] + measurements[index] + '</p>'
                 index++
             });
+
+        }
+
         })
+
+
+
 })
 
-function setOutputVisibility(value: boolean){
+function showOutput(value: boolean){
     if (value) {
         document.getElementById('output').style.visibility = 'visible'
     } else{
@@ -68,20 +85,29 @@ function setOutputVisibility(value: boolean){
     }
 }
 
-function newSearchVisibility(value: boolean){
+function showErrorMsg(value: boolean){
+    if (value) {
+        document.getElementById('errorMsg').style.visibility = 'visible'
+    } else{
+        document.getElementById('errorMsg').style.visibility = 'hidden'
+    }
+}
+
+function showNewSearchBtn(value: boolean){
     if (value) {
         document.getElementById('textInput').style.visibility = 'hidden'
         document.getElementById('searchBtn').style.visibility = 'hidden'
         document.getElementById('searchBtnNew').style.visibility = 'visible'
-        document.getElementById('searchBtnNew').style.marginTop = '20px'
 
     } else{
         document.getElementById('textInput').style.visibility = 'visible'
         document.getElementById('searchBtn').style.visibility = 'visible'
-        document.getElementById('searchBtnNew').style.visibility = 'hidden'    
+        document.getElementById('searchBtnNew').style.visibility = 'hidden'
+   
     }
 }
 
 document.getElementById('searchBtnNew').addEventListener('click', function reloadPage() {
     location.reload(); 
 })
+
